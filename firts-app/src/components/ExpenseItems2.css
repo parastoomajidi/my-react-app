@@ -1,0 +1,38 @@
+.expence-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    margin: 1rem;
+    border-radius: 8px;
+    background: #e9e0e0;
+}
+
+.expence-item__description{
+  display: flex;
+  flex-direction: row;
+}
+ 
+.expence-item h2{
+    color: black;
+    flex: 1;
+    margin: 0.1rem;
+}
+
+.expence-item__price{
+    color:#e9e0e0;
+    background-color: #0b9270;
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+
+@media (min-width:580px){
+    .expence-item__description{
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        justify-content: flex-start;
+        flex: 1;
+    }
+}

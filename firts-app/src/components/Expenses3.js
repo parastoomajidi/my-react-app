@@ -1,0 +1,27 @@
+import ExpenseItem from "./ExpenseItems1";
+import './Expenses4.css'
+function Expenses(props) {
+  return (
+    // expenses form 4 attrebitu
+    <div className="expenses">
+        {/* items define in APP.js */}
+      <ExpenseItem
+        title={props.items[0].title}
+        price={props.items[0].price}
+        date={props.items[0].date}
+      ></ExpenseItem>
+      <ExpenseItem
+        title={props.items[1].title}
+        price={props.items[1].price}
+        date={props.items[1].date}
+      ></ExpenseItem>
+      <ExpenseItem
+        title={props.items[2].title}
+        price={props.items[2].price}
+        date={props.items[2].date}
+      ></ExpenseItem>
+    </div>
+  );
+}
+
+export default Expenses;
