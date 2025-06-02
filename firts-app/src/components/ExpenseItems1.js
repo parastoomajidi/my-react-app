@@ -1,4 +1,5 @@
 import "./ExpenseItems2.css";
+import Card from "./card7";
 import ExpenseDate from './ExpensDate5';
 
 function ExpenseItem(props) {
@@ -7,14 +8,14 @@ function ExpenseItem(props) {
 //   let title = "Test";
 //   
   return (
-    <div className="expence-item">
+    <Card className="expence-item">
       {/* <div>{props.date.toDateString()}</div> */}
       <ExpenseDate date={props.date}/>
       <div className="expence-item__description">
         <h2>{props.title}</h2>
         <div className="expence-item__price">{props.price}</div>
       </div>
-    </div>
+    </Card>
   );
 }
 export default ExpenseItem;
