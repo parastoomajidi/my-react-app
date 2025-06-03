@@ -28,6 +28,8 @@ setDate(new Date(2030, 5, 15));
 console.log(title);
 }
 
+
+
   return (
     <Card className="expence-item">
       {/* <div>{props.date.toDateString()}</div> */}
@@ -37,6 +39,7 @@ console.log(title);
         <div className="expence-item__price">{props.price}</div>
         <button onClick={clickHandler}> Change</button>
         <button onClick={clickDHandler}> dateTest</button>
+        <button > im test </button>
       </div>
     </Card>
   );
