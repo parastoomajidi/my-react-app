@@ -37,9 +37,9 @@ console.log(title);
       <div className="expence-item__description">
         <h2>{title}</h2>
         <div className="expence-item__price">{props.price}</div>
-        <button onClick={clickHandler}> Change</button>
+        {/* <button onClick={clickHandler}> Change</button>
         <button onClick={clickDHandler}> dateTest</button>
-        <button > im test </button>
+        <button > im test </button> */}
       </div>
     </Card>
   );
