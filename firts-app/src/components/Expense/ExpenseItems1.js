@@ -33,10 +33,10 @@ console.log(title);
   return (
     <Card className="expence-item">
       {/* <div>{props.date.toDateString()}</div> */}
-      <ExpenseDate date={date}/>
+      <ExpenseDate date={props.date}/>
       <div className="expence-item__description">
-        <h2>{title}</h2>
-        <div className="expence-item__price">{props.price}</div>
+        <h2>{props.title}</h2>
+        <div className="expence-item__price">{props.amount}</div>
         {/* <button onClick={clickHandler}> Change</button>
         <button onClick={clickDHandler}> dateTest</button>
         <button > im test </button> */}

@@ -2,16 +2,20 @@ import "./NewExpense10.css";
 import Card from "../UI/Card77";
 import ExpenseForm from "./ExpenseForm11";
 
-const NewExpense = () => {
-  const saveExpenseDataHandler = enterdexpeneDate=>{
-    console.log(enterdexpeneDate);
-    console.log("test");
-  }
-  return (
-    <Card className="new-expense">
-      <ExpenseForm onSaveExpenseDate={saveExpenseDataHandler}></ExpenseForm>
-    </Card>
-  );
-};
+const NewExpense=(props) =>{
+    const saveExpenseDataHandler = enteredExpenseDate=>{
+      const expenseDate={
+        ...enteredExpenseDate,
+        id:Math.round(Math.random()*1000).toString()
+      }
+      props.onSaveExpenseData(expenseDate);
+    }
+    return<Card className ="new-expense">
+      <ExpenseForm onSaveExpenseData={saveExpenseDataHandler}></ExpenseForm>
+     </Card>
+    }
+
+
+
 
 export default NewExpense;

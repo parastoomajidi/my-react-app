@@ -6,7 +6,15 @@ function Expenses(props) {
     // expenses form 4 attrebitu
     <Card className="expenses">
         {/* items define in APP.js */}
-      <ExpenseItem
+        {props.items.map(expense =>
+       
+          <ExpenseItem 
+           key={expense.id}
+          title={expense.title}
+          amount ={expense.amount}
+          date={expense.date}/>  
+       )}
+      {/* <ExpenseItem
         title={props.items[0].title}
         price={props.items[0].price}
         date={props.items[0].date}
@@ -20,7 +28,7 @@ function Expenses(props) {
         title={props.items[2].title}
         price={props.items[2].price}
         date={props.items[2].date}
-      ></ExpenseItem>
+      ></ExpenseItem> */}
     </Card>
   );
 }
