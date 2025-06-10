@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./ExpenseForm12.css";
+
 const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
@@ -10,19 +11,19 @@ const ExpenseForm = (props) => {
     setEnteredTitle(event.target.value);
   };
 
-  const amountchangeHandler = (event) => {
+  const amountChangeHandler = (event) => {
     setEnteredAmount(event.target.value);
   };
 
-  const datechangeHandler = (event) => {
+  const dateChangeHandler = (event) => {
     setenteredDate(event.target.value);
   };
   // ein wichtig punkt ist, wir benutsen event fur kein auto refresh
   const submitHandler = (event) => {
     // event . preventDefutl ist fur nicht mache was sie muss zu tun. funyyy=)
-    event.preventDefult();
+    event.preventDefault();
     // console.log( 'submit');
-    const expenseDate = {
+    const expenseData = {
       title: enteredTitle,
       amount: enteredAmount,
       date: new Date(enteredDate),
@@ -30,7 +31,8 @@ const ExpenseForm = (props) => {
     setEnteredTitle("");
     setEnteredAmount("");
     setenteredDate("");
-    props.onSaveExpenseDate(expenseDate);
+    // props.onSaveExpenseData(expenseData);
+    props.onSaveExpenseData(expenseData);
   };
 
   // fur form
@@ -52,7 +54,7 @@ const ExpenseForm = (props) => {
           <input
             type="number"
             min="1"
-            onChange={amountchangeHandler}
+            onChange={amountChangeHandler}
             value={enteredAmount}
           />
         </div>
@@ -62,7 +64,7 @@ const ExpenseForm = (props) => {
           <input
             type="date"
             min="2023-1-1"
-            onChange={datechangeHandler}
+            onChange={dateChangeHandler}
             value={enteredDate}
           />
         </div>
@@ -70,7 +72,7 @@ const ExpenseForm = (props) => {
         <div className="new-expense-action">
           <button type="submit">Add</button>
         </div>
-        </div>
+      </div>
     </form>
   );
 };

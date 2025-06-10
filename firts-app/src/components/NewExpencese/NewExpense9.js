@@ -4,11 +4,11 @@ import ExpenseForm from "./ExpenseForm11";
 
 const NewExpense=(props) =>{
     const saveExpenseDataHandler = enteredExpenseDate=>{
-      const expenseDate={
+      const expenseData={
         ...enteredExpenseDate,
         id:Math.round(Math.random()*1000).toString()
       }
-      props.onSaveExpenseData(expenseDate);
+      props.onSaveExpenseData(expenseData);
     }
     return<Card className ="new-expense">
       <ExpenseForm onSaveExpenseData={saveExpenseDataHandler}></ExpenseForm>

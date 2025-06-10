@@ -23,7 +23,7 @@ function App() {
   return (
     <div>
       <h1>hey parastoo</h1>
-      <NewExpense onSaveExpensesData={appSaveExpenseDataHandler} />
+      <NewExpense onSaveExpenseData={appSaveExpenseDataHandler} />
       <Expenses items={expenses} />
     </div>
   );
