@@ -5,6 +5,7 @@ const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setenteredDate] = useState("");
+  const [isFormVisiable, setFormVisiable]= useState(false);
 
   // define method of handler
   const titleChangeHandler = (event) => {
@@ -31,9 +32,18 @@ const ExpenseForm = (props) => {
     setEnteredTitle("");
     setEnteredAmount("");
     setenteredDate("");
+    setFormVisiable(false);
     // props.onSaveExpenseData(expenseData);
     props.onSaveExpenseData(expenseData);
   };
+
+  const  showFormClickHandler = event =>setFormVisiable(!isFormVisiable);
+
+  if(!isFormVisiable){
+    return<div>
+      <button onClick={showFormClickHandler}> Deep Search</button>
+    </div>
+  }
 
   // fur form
   return (
@@ -71,6 +81,7 @@ const ExpenseForm = (props) => {
         {/* button fur add */}
         <div className="new-expense-action">
           <button type="submit">Add</button>
+          <button onClick={showFormClickHandler}>cancel</button>
         </div>
       </div>
     </form>
